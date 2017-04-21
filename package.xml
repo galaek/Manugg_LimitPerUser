@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+    <name>Manugg_LimitPerUser</name>
+    <version>0.1.9</version>
+    <stability>stable</stability>
+    <license uri="https://opensource.org/licenses/osl-3.0.php">Open Software License (OSL)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Limit the maximum amount of each product that a single user can buy.&#xD;
+Prevent non-registered users from using the shopping cart. </summary>
+    <description>This extension gives Magento the option to limit the maximum amount (for each product) that a user can buy (lifetime, not just in a single checkout). This limit can be configured individually for each product. Also, the user can specify a custom message when a restriction is applied&#xD;
+Also, this extension has an option to prevent non-registered users from using the shopping cart. </description>
+    <notes>First Release of the LimitPerUser Extension.</notes>
+    <authors><author><name>Manuel Gracia Gracia</name><user>Manugg</user><email>manugracia@gmail.com</email></author></authors>
+    <date>2017-04-21</date>
+    <time>06:45:06</time>
+    <contents><target name="magelocal"><dir name="Manugg"><dir name="LimitPerUser"><dir name="Helper"><file name="Data.php" hash="d2eac75b8cafa91f4f87e7146c65aec4"/></dir><file name="LICENSE.txt" hash="25f9e2dfd5147ec32562f1b0bb468a0b"/><dir name="Model"><file name="Enabler.php" hash="88cb671351c2e6cd40239d57829c7d15"/><file name="Observer.php" hash="733c92becd763cade860ac70d0b7b2b1"/></dir><dir name="etc"><file name="adminhtml.xml" hash="0c4933de469db6d91a7808743d7dcabb"/><file name="config.xml" hash="b091f08737472f794c3938a64d79c82d"/><file name="system.xml" hash="8c9bd84ccf9caf8c741eb5e51241bce7"/></dir><dir name="sql"><dir name="manugg_limitperuser_setup"><file name="mysql4-install-0.1.9.php" hash="eb7fcede6240601479f6a88b99468ca5"/></dir></dir></dir></dir></target><target name="magelocale"><dir name="es_ES"><file name="Manugg_LimitPerUser.csv" hash="367738b179ab703b2562b19f671a642d"/></dir></target><target name="mageetc"><dir name="modules"><file name="Manugg_LimitPerUser.xml" hash="188f0cfe7be3dc5d313fd22e31fb9a41"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

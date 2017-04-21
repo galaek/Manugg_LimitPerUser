@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+ <!--
+/**
+ * Manugg_LimitPerUser extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Open Software License (OSL)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category       Manugg
+ * @package        Manugg_LimitPerUser
+ * @copyright      Copyright (c) 2017
+ * @license        https://opensource.org/licenses/osl-3.0.php Open Software License (OSL)
+ */
+ -->
+<config>
+	<modules>
+		<Manugg_LimitPerUser>
+			<version>0.1.9</version>
+		</Manugg_LimitPerUser>
+	</modules>
+	<global>
+		<models>
+			<manugg_limitperuser>
+				<class>Manugg_LimitPerUser_Model</class>
+			</manugg_limitperuser>
+			<limitperuser>
+                <class>Manugg_LimitPerUser_Model</class>
+            </limitperuser>
+		</models>
+		<helpers>
+            <limitperuser>
+                <class>Manugg_LimitPerUser_Helper</class>
+            </limitperuser>
+        </helpers>
+		<events>
+			<checkout_cart_update_items_after>
+				<observers>
+					<manugg_limitperuser>
+						<class>manugg_limitperuser/observer</class>
+						<method>enforceLimitPerUser</method>
+						<type>singleton</type>
+					</manugg_limitperuser>
+				</observers>
+			</checkout_cart_update_items_after>
+			<checkout_cart_product_add_after>
+				<observers>
+					<mage_checklogged>
+						<class>manugg_limitperuser/observer</class>
+						<method>enforceLimitAddProduct</method>
+						<type>singleton</type>
+					</mage_checklogged>
+				</observers>
+			</checkout_cart_product_add_after>
+		</events>
+		<resources>
+			<manugg_limitperuser_setup>
+				<setup>
+				    <module>Manugg_LimitPerUser</module>
+				    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+				</setup>
+			</manugg_limitperuser_setup>
+        </resources> 
+	</global>
+	<frontend>
+		<translate>
+			 <modules>
+				 <Manugg_LimitPerUser>
+					 <files>
+						 <default>Manugg_LimitPerUser.csv</default>
+					 </files>
+				 </Manugg_LimitPerUser>
+			 </modules>
+		 </translate>
+	</frontend>
+</config>

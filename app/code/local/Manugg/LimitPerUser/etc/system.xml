@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+ <!--
+/**
+ * Manugg_LimitPerUser extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the Open Software License (OSL)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/osl-3.0.php
+ * 
+ * @category       Manugg
+ * @package        Manugg_LimitPerUser
+ * @copyright      Copyright (c) 2017
+ * @license        https://opensource.org/licenses/osl-3.0.php Open Software License (OSL)
+ */
+ -->
+<config>
+    <tabs>
+        <limitperuser translate="label" module="limitperuser">
+            <label>Manugg</label>
+            <sort_order>2</sort_order>
+        </limitperuser>
+    </tabs>
+     
+    <sections>
+        <limitperuser_options translate="label" module="limitperuser">
+            <label>Limit Per User Settings</label>
+            <tab>limitperuser</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <section_enabler translate="label">
+                    <label>Enable/Disable Limit Per User</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                        <field_enabled>
+                            <label>Enable Limit Per User limitation</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>limitperuser/enabler</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Select "Yes" to Enable the limit per user or "No" to disable it.</comment>                   
+                        </field_enabled>
+                    </fields>
+                </section_enabler>
+				<section_message_add translate="label">
+                    <label>Add Product: Shopping Cart Message</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+						<show_default_message_add>
+                            <label>Show default message</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>limitperuser/enabler</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Select "Yes" to show the default message, select "No" otherwise</comment>                   
+                        </show_default_message_add>
+                        <custom_message_add>
+                            <label>Custom Message to show</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This message will be shown in the shopping cart if the extension modifies the qty of a product. Leave it blank if you don't want to show one.</comment>                   
+                        </custom_message_add>
+                    </fields>
+                </section_message_add>
+                <section_message translate="label">
+                    <label>Update Cart: Shopping Cart Message</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+						<show_default_message>
+                            <label>Show default message</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>limitperuser/enabler</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Select "Yes" to show the default message, select "No" otherwise</comment>                   
+                        </show_default_message>
+                        <custom_message>
+                            <label>Custom Message to show</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>This message will be shown in the shopping cart if the extension modifies the qty of a product. Leave it blank if you don't want to show one.</comment>                   
+                        </custom_message>
+                    </fields>
+                </section_message>
+				<section_logged_cart translate="label">
+                    <label>Disable Shopping Cart for guests</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+						<disable_cart>
+                            <label>Disable shopping cart for not-logged users</label>
+                            <frontend_type>select</frontend_type>
+							<source_model>limitperuser/enabler</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Select "Yes" if you don't want guests to access shopping cart</comment>                   
+                        </disable_cart>
+                    </fields>
+                </section_logged_cart>
+            </groups>                
+        </limitperuser_options>
+    </sections>
+</config>
